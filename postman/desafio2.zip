@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "2b39d1c6-4277-4bfa-a793-b253807b3ea5",
+		"name": "desafio2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cria Conta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idConta\": \"{{$guid}}\",\r\n    \"idPessoa\": \"{{$guid}}\",\r\n    \"limiteSaqueDiario\": 100,\r\n    \"tipoConta\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/conta/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"conta",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Bloqueia Conta",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/conta/block/8493ef63-c1bc-4583-8f1c-732d5830d16a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"conta",
+						"block",
+						"8493ef63-c1bc-4583-8f1c-732d5830d16a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Saldo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/consulta/saldo/209922b0-2dad-4fbf-b50e-442a7f5617ad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consulta",
+						"saldo",
+						"209922b0-2dad-4fbf-b50e-442a7f5617ad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Extrato - Período",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/consulta/extrato?id_conta=d486ccb3-26bd-4817-846c-82de7f70d70f&data_inicio=20/01/2022&data_fim=25/03/2022",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consulta",
+						"extrato"
+					],
+					"query": [
+						{
+							"key": "id_conta",
+							"value": "d486ccb3-26bd-4817-846c-82de7f70d70f"
+						},
+						{
+							"key": "data_inicio",
+							"value": "20/01/2022"
+						},
+						{
+							"key": "data_fim",
+							"value": "25/03/2022"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Extrato",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/consulta/extrato?id_conta=d486ccb3-26bd-4817-846c-82de7f70d70f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"consulta",
+						"extrato"
+					],
+					"query": [
+						{
+							"key": "id_conta",
+							"value": "d486ccb3-26bd-4817-846c-82de7f70d70f"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposita",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idConta\": \"209922b0-2dad-4fbf-b50e-442a7f5617ad\",\r\n    \"valor\": 150\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transacao/deposita",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transacao",
+						"deposita"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Saca",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idConta\": \"209922b0-2dad-4fbf-b50e-442a7f5617ad\",\r\n    \"valor\": 50\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/transacao/saque",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transacao",
+						"saque"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

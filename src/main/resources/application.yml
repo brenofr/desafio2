@@ -1,0 +1,14 @@
+desafio2:
+  datastore:
+    hostname: 127.0.0.1
+    keyspace-name: desafio_2_keyspace
+    local-datacenter: datacenter1
+    port: 9042
+
+#spring:
+#  data:
+#    cassandra:
+#      local-datacenter: datacenter1
+#      keyspace-name: desafio_2_keyspace
+#      port: 9142
+#      contact-points: localhost
